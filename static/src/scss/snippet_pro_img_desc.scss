@@ -1,0 +1,76 @@
+#wrapwrap {
+    .tienda_container_home_main {
+        /*background-color: yellow;*/
+        .main_slider {
+            .dot {
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                display: inline-block;
+            }
+            .carousel-indicators li {
+                background-color: lighten($primary, 20%);
+            }
+            .carousel-indicators .active {
+                background-color: darken($primary, 10%);
+            }
+            .main_slider_inner_icon .carousel-control-prev-icon {
+                color: lighten($primary, 20%);
+                &:before {
+                    color:lighten($primary, 20%);
+                    }
+                }
+            .main_slider_inner_icon .carousel-control-next-icon {
+                color: lighten($primary, 20%);   
+                &:before {
+                    color:lighten($primary, 20%);
+                    }
+                }
+            .main_slider_inner {
+                .main_slider_inner_carousel {
+                    .carousel_container {
+                        .carousel_container_row {
+                            .carousel_container_row_col_5_bt {
+                                padding-top: 30px;
+                                padding-bottom: 30px;
+                                .product_content {
+                                    .show-read-more {
+                                        overflow: hidden;
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 3;
+                                        -webkit-box-orient: vertical;
+                                    }
+                                    .size {
+                                        font-size: 17px;
+                                    }
+                                    .fcl {
+                                        color: #7b7171;
+                                    }
+
+                                    .bttnn {
+                                        .btnn {
+                                            background-color: lighten($primary, 10%);
+                                            border:none;
+                                            border-radius:25px;
+                                            padding: 10px;
+                                            padding-left: 25px;
+                                            padding-right: 25px;
+                                        }
+                                    }
+                                }
+                                border-top: 4px solid lighten($primary, 20%);
+                                border-bottom: 1px solid #CCC;
+                                border-right: 1px solid #CCC;
+                            }
+                            .carousel_container_row_col_5 {
+                                padding: 30px;
+                                border:1px solid #CCC;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

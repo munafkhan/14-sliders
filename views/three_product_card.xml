@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_frontend_snippet_three_product_cardd" inherit_id="website.assets_frontend" name="three product card snipet">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/slider/static/src/scss/snippet_three_product_card.scss"/>
+        </xpath>
+    </template>
+
+    <template id="snippet_three_product_card" name="Three product card">
+        <section id="wrap" class="snippet_three_product_card">
+            <div class="container tienda_container_3col_slider">
+                <div class="row tienda_container_3col_slider_row">
+                    <!-- card 1 -->
+                    <div class="col-md-4 s_col_no_bgcolor pt16 pb16 row_col4">
+                        <t t-set="product" t-value="request.env['product.template'].search([('is_published','=',True)])"/>
+                        <div class="img img-fluid mx-auto product_image" widget="image" t-field="product[-1].image" t-options="{'widget': 'image', 'resize': None if product_image_big else '200x200'}"/>
+                        <div class="card-body product_content">
+                            <p class="show-read-more fcl">
+                                <t t-esc="product[-1].description_sale"/>
+                            </p>
+                        </div>
+                        <div class="card-footer product_content_footer">
+                            <t t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}" t-esc="product[-1].lst_price"/>
+                            <i class="fa fa-info-circle mr-1"/>
+                            <span class="icon">
+                                <a class="button" href="#">
+                                    <i class="fa fa-shopping-cart"> Add to carttt</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- end -->
+
+                    <!-- card 2 -->
+                    <div class="col-md-4 s_col_no_bgcolor pt16 pb16 row_col4">
+                        <t t-set="product" t-value="request.env['product.template'].search([('is_published','=',True)])"/>
+                        <div class="img img-fluid mx-auto product_image" widget="image" t-field="product[-2].image" t-options="{'widget': 'image', 'resize': None if product_image_big else '200x200'}"/>
+                        <div class="card-body product_content">
+                            <p class="show-read-more fcl">
+                                <t t-esc="product[-2].description_sale"/>
+                            </p>
+                        </div>
+                        <div class="card-footer product_content_footer">
+                            <t t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}" t-esc="product[-2].lst_price"/>
+                            <i class="fa fa-info-circle mr-1"/>
+                            <span class="icon">
+                                <a class="button" href="#">
+                                    <i class="fa fa-shopping-cart"> Add to carttt</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- end -->
+
+                    <!-- card 3 -->
+                    <div class="col-md-4 s_col_no_bgcolor pt16 pb16 row_col4">
+                        <t t-set="product" t-value="request.env['product.template'].search([('is_published','=',True)])"/>
+                        <div class="img img-fluid mx-auto product_image" widget="image" t-field="product[-3].image" t-options="{'widget': 'image', 'resize': None if product_image_big else '200x200'}"/>
+                        <div class="card-body product_content">
+                            <p class="show-read-more fcl">
+                                <t t-esc="product[-3].description_sale"/>
+                            </p>
+                        </div>
+                        <div class="card-footer product_content_footer">
+                            <t t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}" t-esc="product[-3].lst_price"/>
+                            <i class="fa fa-info-circle mr-1"/>
+                            <span class="icon">
+                                <a class="button" href="#">
+                                    <i class="fa fa-shopping-cart"> Add to carttt</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- end -->
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="snippet_three_product_card_inherit" inherit_id="website.snippets" name="Three product card">
+        <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+            <t t-snippet="slider.snippet_three_product_card"/>
+        </xpath>
+    </template>
+
+</odoo>

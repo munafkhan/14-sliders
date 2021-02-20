@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_frontend_snippet_all_product_slider" inherit_id="website.assets_frontend" name="all product slider one item">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/slider/static/src/scss/snippet_all_product_slider.scss"/>
+            <link rel="stylesheet" type="text/css" href="/slider/static/src/scss/owl.carousel.min.css"/>
+            <link rel="stylesheet" type="text/css" href="/slider/static/src/scss/owl.theme.default.min.css"/>
+            <script type="text/javascript" src="/slider/static/src/js/script.js"></script>
+            <script type="text/javascript" src="/slider/static/src/jquery/owl.carousel.js"></script>
+        </xpath>
+    </template>
+
+    <template id="snippet_all_product_slider" name="All Product Slider">
+        <section class="snippet_all_product_slider">
+            
+            <div class="container slider_multi_1 css_editable_mode_display">
+                <div class="owl-carousel owl-theme slider_multi_1_theme">
+                    <t t-set="product_ids" t-value="request.env['product.template'].search([('is_published','=',True)])"/>
+                    <t t-foreach="product_ids" t-as="l">
+                        <div class="item product_items">
+                            <div class="row_col4">
+                                <div class="img img-fluid mx-auto product_image" widget="image" t-field="l.image" t-options="{'widget': 'image', 'resize': None if product_image_big else '200x150'}"/>
+                                <div class="card-body product_content">
+                                    <p class="show-read-more fcl">
+                                        <t t-esc="l.description_sale"/>
+                                    </p>
+                                </div>
+                                <div class="card-footer product_content_footer">
+                                    <t t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}" t-esc="l.lst_price"/>
+                                    <i class="fa fa-info-circle mr-1"/>
+                                    <span class="icon">
+                                        <a class="button" href="#">
+                                            <i class="fa fa-shopping-cart"> Add to carttt</i>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="snippet_all_product_slider_inherit" inherit_id="website.snippets" name="All Product Slider">
+        <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+            <t t-snippet="slider.snippet_all_product_slider"/>
+        </xpath>
+    </template>
+
+</odoo>

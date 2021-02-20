@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record model="ir.ui.view" id="website_links_tree">
+        <field name="model">website.links</field>
+        <field name="name">website_links</field>
+        <field name="arch" type="xml">
+            <tree string="website links">
+                <field name="legislacion"/>
+                <!-- <field name="financiacion"/>
+                <field name="aviso_legal"/>
+                <field name="politica_de_privacidad"/>
+                <field name="politica_de_cookies"/> -->
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="website_links_form">
+        <field name="model">website.links</field>
+        <field name="name">website_links</field>
+        <field name="arch" type="xml">
+            <form string="website links">
+                <sheet>
+                    <group>
+                        <field name="legislacion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- templates for website links menu -->
+   <!--  <template id="website_links" name="website_links">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <t t-foreach="website_links_ids[-1]" t-as="l">
+                        <span t-field="l.legislacion"/>
+                    </t>       
+                </div>
+            </div>
+        </t>
+    </template> -->
+
+    <template id="legislacion" name="legislacion">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <input type="heml"/>
+                    <t t-foreach="legislacion[-1]" t-as="l">
+                        <span t-field="l.legislacion"/>
+                    </t>       
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+
+
+    <!-- action for website.links model -->
+    <record model="ir.actions.act_window" id="act_open_website_link_view">
+        <field name="name">Website Links</field>
+        <field name="res_model">website.links</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new website links.
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Website Links"
+        id="menu_website_website_links"
+        action="act_open_website_link_view"
+        parent="website.menu_website_global_configuration"
+        groups="base.group_system"
+        sequence="10"/>
+</odoo>

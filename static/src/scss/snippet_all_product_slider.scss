@@ -1,0 +1,56 @@
+#wrapwrap {
+    .slider_multi_1 {
+
+        .tom_main {
+            padding: 12px;
+            font-size: 28px;
+        }
+
+        .tom_main_categ {
+            padding: 12px;
+            font-size: 25px;
+        }
+        .slider_multi_1_theme {
+            .product_items {
+                .row_col4 {
+                    .product_image {
+                        border:1px solid #CCC;
+                        text-align: center;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        border-top: 4px solid lighten($primary, 20%);
+                    }
+                    .product_content {
+                        border: 1px solid #CCC;
+                        border-bottom: none;
+                        border-top: none;
+                        padding-top: 15px;
+                        padding-bottom: 1px;
+                        .show-read-more {
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                        }
+                        .fcl {
+                            font-size: 16px;
+                            max-height: 75px;
+                            height: 75px;
+                        }
+                    }
+                    .product_content_footer {
+                        font-size: 16px;
+                        background-color: white;
+                        border-bottom: 1px solid #CCC;
+                        border-left: 1px solid #CCC;
+                        border-right: 1px solid #CCC;
+                        border-top: none;
+                        .icon {
+                            float:right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

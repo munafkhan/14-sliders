@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_frontend_snippet_three_product_card" inherit_id="website.assets_frontend" name="newslatter snipet">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/slider/static/src/scss/newslatter.scss"/>
+        </xpath>
+    </template>
+
+    <template id="snippet_newslatter" name="snipet newslatter template">
+        <section class="snippet_newslatter">
+            <div class="container newslater_main">
+            <div class="row newslater_main_row">
+                <div class="col-md-3"/>
+                <div class="col-md-6 top_head">
+                    <h4>NewsLetter</h4>
+                </div>
+                <div class="col-md-3"/>
+            </div>
+            <div class="row newslater_main_row">
+                <div class="col-md-3"/>
+                <div class="col-md-6 top_head_2">
+                    <h2><b>Subscribte ahora.</b></h2>
+                </div>
+                <div class="col-md-3"/>
+            </div>
+            <div class="row newslater_main_row">
+                <div class="col-md-3"/>
+                <div class="col-md-6 top_head_2">
+                    <h3>Tu Farmaceuticeo tambient te inform en tu mail</h3>
+                    <div class="col-md-3"/>
+                </div>
+            </div>
+
+            <div class="row newslater_main_row">
+                <div class="col-md-3"/>
+                <div class="col-md-6 top_head_3">
+                    <div class="input-group js_mg_follow_form">
+                        <input
+                              type="email"
+                              name="email"
+                              class="js_follow_email form-control"
+                              placeholder="your email..."/>
+                        <span class="input-group-append">
+                            <button href="#" class="btn btn-primary js_follow_btn">Subscribe</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-3"/>
+            </div>
+
+            <div class="row newslater_main_row">
+                <div class="col-md-3"/>
+                <div class="col-md-6 top_head_4">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="materialIndeterminate2" checked="checked"/>
+                        <label class="form-check-label" for="materialIndeterminate2">
+                            Our products are designed for small to medium size companies willing to optimize their performance.<a href="#">Farmaceuticeo companies.</a>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3"/>
+            </div>
+
+            <div class="row newslater_main_row">
+                <div class="col-md-3"/>
+                <div class="col-md-6 top_head_4">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="materialIndeterminate2" checked="checked"/>
+                        <label class="form-check-label" for="materialIndeterminate2">
+                            Our products are designed for small to medium size companies willing to optimize their performance.<a href="#">Farmaceuticeo companies.</a>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3"/>
+            </div>
+        </div>
+        </section>
+    </template>
+
+    <template id="snippet_newslatter_inherit" inherit_id="website.snippets" name="newslatter snipet">
+        <xpath expr="//div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+            <t t-snippet="slider.snippet_newslatter"/>
+        </xpath>
+    </template>
+
+</odoo>
