@@ -5,11 +5,10 @@
             <div id="wrap" class="oe_structure">
                 <t t-call="slider.snippet_pro_img_desc"/>
                 <t t-call="slider.snippet_three_product_card"/>
-                <!-- <t t-call="slider.snippet_all_product_slider"/> -->
                 <t t-call="slider.snippet_dynamic_slider"/><br />
                 <t t-call="slider.snippet_newslatter"/>
                 <br /><br />
-                    
+
             </div>
         </xpath>
     </template>
